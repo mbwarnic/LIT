@@ -1,0 +1,119 @@
+<html>
+<head>
+    <!-- jQuery | Bootstrap -->
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="scripts/bootstrap.min.css">
+    <title>LIT - Home</title>
+    <meta content="stuff, to, help, search, engines, not" name="keywords">
+    <meta content="What this page is about." name="description">
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
+
+
+    <style>
+        #topBar {
+            width: 100%;
+            height: 12%;
+            background-color: black;
+            z-index: -1;
+        }
+
+        #title {
+            padding-top: 2%;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+            z-index: -1;
+        }
+
+        #list {
+            margin-top: 2px;
+            width: 100%;
+            height: 60%;
+            background-color: gray;
+            margin-bottom: 2px;
+            position: relative;
+        }
+
+        .locations {
+            width: 100%;
+            height: 5%;
+            background-color: aqua;
+            border-style: solid;
+            border-width: 2px 0px 2px 0px;
+            align-content: center;
+            position: absolute;
+        }
+
+        #footer {
+            background-color: black;
+            width: 100%;
+            height: 10%;
+        }
+
+        .detailsPage {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            position: absolute;
+            right: -100%;
+            transition: right 2s ease-in-out;
+            z-index: 10;
+        }
+
+            .detailsPage.active {
+                right: 0px;
+            }
+
+            .detailsPage.return {
+                right: -100%;
+            }
+    </style>
+
+    <script>
+        /*  function loadLocations(){
+            //GET url ( ) pull locations from server.
+            var location = "<div id='locations'><a href='#'></a></div>";
+
+            for(var i = 0; i<locations.length; i++){
+
+            }
+
+        } */
+
+        $(function () {
+            var menu = $('.detailsPage');
+            var listItem = $('.locations');
+            listItem.on('click', function () {
+                menu.toggleClass('active');
+            });
+        });
+
+        $(function () {
+            var menu = $('.detailsPage');
+            var button = $('.back');
+            button.on('click', function () {
+                menu.toggleClass('return');
+            });
+        });
+
+
+    </script>
+</head>
+    
+  <body>
+    <div id="topBar"><p id="title">LIT</p></div>
+      <div id="list">
+        <div class="locations"><a href='www.google.com'>test</a></div>
+        <div class="detailsPage"><a class='back' style="color: white;">Back</a></div>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>
